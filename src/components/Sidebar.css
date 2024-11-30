@@ -1,0 +1,94 @@
+/* Sidebar Default untuk Desktop */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #f8f9fa;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1050;
+    transition: transform 0.3s ease, width 0.3s ease;
+  }
+  
+  .sidebar.open {
+    transform: translateX(0); /* Sidebar terlihat */
+  }
+  
+  .sidebar.closed {
+    transform: translateX(-250px); /* Sidebar tersembunyi */
+  }
+  
+  /* Pada Desktop (Layar Besar) Sidebar Selalu Terlihat */
+  @media (min-width: 992px) {
+    .sidebar {
+      transform: translateX(0); /* Sidebar selalu terlihat */
+      width: 250px;
+    }
+    .main-content {
+      margin-left: 250px; /* Konten punya margin */
+    }
+  }
+  
+  /* Sidebar umum */
+
+  
+  .nav-link {
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .nav-link i {
+    margin-right: 8px;
+    font-size: 18px;
+  }
+  
+
+  /* Efek timbul ketika hover */
+.sidebar-item:hover {
+    background-color: #007bff; /* Warna latar belakang biru */
+    color: white; /* Warna teks tetap putih */
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3); /* Efek timbul */
+    transform: translateY(-2px); /* Efek naik sedikit */
+  }
+  
+  /* Warna ikon agar kontras */
+  .sidebar-item:hover i {
+    color: white; /* Ikon juga berubah warna menjadi putih */
+  }
+
+  .sidebar-item:hover,
+.sidebar-item:hover .nav-link {
+  background-color: #007bff; /* Latar belakang biru */
+  color: white !important; /* Pastikan teks berubah menjadi putih */
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3); /* Efek timbul */
+  transform: translateY(-2px); /* Efek naik */
+}
+
+  
+  .sidebar-item:active {
+    transform: translateY(0); /* Menetralkan transform saat aktif */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling link yang sedang aktif */
+  .nav-link.active {
+    background-color: #0056b3;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .sidebar-item.active {
+    background-color: #007bff; /* Warna biru untuk halaman aktif */
+    color: white !important;  /* Teks berwarna putih */
+    box-shadow: inset 0 4px 10px rgba(0, 123, 255, 0.3); /* Efek inset */
+  }
+  .sidebar-item.active i {
+    color: white !important; /* Ikon juga berwarna putih */
+  }
+  

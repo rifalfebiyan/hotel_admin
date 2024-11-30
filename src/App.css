@@ -1,0 +1,84 @@
+.app-container {
+  display: flex;
+  margin-top: 56px;
+}
+
+
+/* Sidebar.css */
+.sidebar {
+  transition: width 0.3s ease;
+}
+
+.sidebar.open {
+  width: 250px;
+}
+
+.sidebar .nav-link {
+  color: #333;
+}
+
+@media (max-width: 992px) {
+  .sidebar {
+    position: fixed;
+    z-index: 1050;
+    width: 0;
+    overflow: hidden;
+  }
+
+  .sidebar.open {
+    width: 250px;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+
+/* Media Queries for mobile responsiveness */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column; /* Stack sidebar and content vertically */
+  }
+
+  .sidebar {
+    width: 100%; /* Full width on mobile */
+    margin: 0; /* Remove margin */
+  }
+
+  .content {
+    margin-left: 0; /* Remove left margin */
+    padding: 10px; /* Adjust padding */
+  }
+}
+
+.overlay {
+  position: relative;
+  transition: margin-left 0.3s;
+  margin-left: 250px; /* Menggeser konten utama ke kanan saat sidebar terbuka */
+}
+
+@media (max-width: 768px) {
+  .overlay {
+    margin-left: 0; /* Reset margin pada perangkat kecil */
+  }
+}
+
+.overlay {
+  transition: margin-left 0.3s ease;
+  margin-left: 250px; /* Geser konten utama ke kanan saat sidebar terbuka */
+}
+
+@media (max-width: 768px) {
+  .overlay {
+    margin-left: 0; /* Reset margin pada perangkat kecil */
+  }
+}
+
+.position-fixed {
+  position: fixed;
+  top: 56px; /* Jarak dari atas */
+  left: 0; /* Posisi dari kiri */
+  height: calc(100vh - 56px); /* Tinggi sidebar minus tinggi navbar */
+  z-index: 1000; /* Pastikan sidebar di atas konten lainnya */
+}
